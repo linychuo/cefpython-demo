@@ -1,0 +1,27 @@
+{
+  "name": "cefpython-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/eslint src",
+    "build": "./node_modules/.bin/preact build --service-worker false --template src/template.html --dest resources",
+    "dev": "./node_modules/.bin/preact watch"
+  },
+  "keywords": [],
+  "author": "LiYongchao",
+  "license": "ISC",
+  "eslintConfig": {
+    "extends": "eslint-config-synacor"
+  },
+  "devDependencies": {
+    "eslint": "^4.14.0",
+    "eslint-config-synacor": "^2.0.4",
+    "preact-cli": "^2.1.0"
+  },
+  "dependencies": {
+    "preact": "^8.2.7",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2"
+  }
+}
