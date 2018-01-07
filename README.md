@@ -9,27 +9,27 @@ git clone https://github.com/linychuo/cefpython-demo.git
 ```
 
 2. 由于项目使用了python和nodejs，先讲python的环境配置
-  1. 安装python(2 or 3)，然后安装virtualenv
-  2. 进入项目目录后，在命令行里输入
-  ```bash
-  virtualenv .env
-  ```
-  3. 然后激活创建的env，可自行搜索怎样激活env
-  4. 安装项目所需要的python依赖，其中pyinstaller为创建可执行的exe文件所用
-  ```bash
-    pip install cefpython3==57.0 pyinstaller
-  ```
+    1. 安装python(2 or 3)，然后安装virtualenv
+    2. 进入项目目录后，在命令行里输入
+    ```bash
+    virtualenv .env
+    ```
+    3. 然后激活创建的env，可自行搜索怎样激活env
+    4. 安装项目所需要的python依赖，其中pyinstaller为创建可执行的exe文件所用
+    ```bash
+      pip install cefpython3==57.0 pyinstaller
+    ```
 
 3. 接下nodejs的相关配置
-  1. 首先安装nodejs，这一点不罗嗦了
-  2. 在项目的根目录下执行以下命令来安装项目所需要的js依赖
-  ```bash
-  npm install
-  ```
-  3. 运行以下命令用来build界面
-  ```bash
-  npm run build
-  ```
+    1. 首先安装nodejs，这一点不罗嗦了
+    2. 在项目的根目录下执行以下命令来安装项目所需要的js依赖
+    ```bash
+    npm install
+    ```
+    3. 运行以下命令用来build界面
+    ```bash
+    npm run build
+    ```
 
 4. 最后，可以通过
 ```bash
