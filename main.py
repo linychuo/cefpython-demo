@@ -1,4 +1,4 @@
-#encoding=utf-8
+# coding=utf-8
 from cefpython3 import cefpython as cef
 import platform
 import sys, os
@@ -12,7 +12,7 @@ def main():
         }
     })
     cur_dir = os.path.dirname(os.path.abspath(__file__))
-    cef.CreateBrowserSync(url=os.path.join(cur_dir, "resources", "index.html"),
+    cef.CreateBrowserSync(url='file://' + os.path.join(cur_dir, "resources", "index.html"),
                           window_title="你好，cefpython")
     cef.MessageLoop()
     cef.Shutdown()
