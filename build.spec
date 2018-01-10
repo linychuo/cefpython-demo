@@ -24,9 +24,9 @@ elif platform.system() == 'Windows':
     extra_files.append((os.path.join(cefpython3_dir, 'subprocess.exe'), '.'))
 
 # add bundle js
-resources_dir = os.listdir('./resources')  
+resources_dir = os.listdir('./resources')
 pattern = "bundle*.js"
-for entry in resources_dir:  
+for entry in resources_dir:
     if fnmatch.fnmatch(entry, pattern):
         extra_files.append((os.path.join('.', 'resources/%s' % entry), 'resources'))
 
@@ -43,22 +43,6 @@ a = Analysis(['main.py'],
 pyz = PYZ(a.pure, a.zipped_data,
              cipher=block_cipher)
 
-# remove unused files
-binaries = []
-for item in a.binaries:
-    if item[0] not in ['python36.dll', 'msvcm90.dll', 
-                        'msvcp90.dll', 'msvcr90.dll', 
-                        'MSVCR100.dll', 'VCRUNTIME140.dll',
-                        'cefpython3.cefpython_py36',
-                        'cefpython3.cefpython_py35',
-                        'cefpython3.cefpython_py34',
-                        'bz2', 'pyexpat', 'select', 
-                        'unicodedata', 'win32pipe',
-                        'pywintypes27.dll', 'ucrtbase.dll',
-                        'Microsoft.VC90.CRT.manifest'] \
-            and not item[0].startswith('api-ms-win-'):
-        binaries.append(item)
-
 exe = EXE(pyz,
           a.scripts,
           exclude_binaries=True,
@@ -69,7 +53,7 @@ exe = EXE(pyz,
           console=False)
 
 coll = COLLECT(exe,
-               binaries,
+               a.binaries,
                a.zipfiles,
                a.datas,
                strip=False,
